@@ -1,0 +1,50 @@
+$(document).ready(function () {
+        $('#carousel-imagens').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: true,
+            arrows: false,
+            infinite: true
+            });
+
+        $('#telefone').mask('(00) 00000-0000');
+        
+        });
+
+
+
+        $('#form').validate({
+        rules: {
+            nome: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            telefone: {
+                required: true
+            },
+            cpf: {
+                required: true
+            },
+            endereco: {
+                required: true
+            },
+            cep: {
+                required: true
+            }
+        },
+        messages: {
+            nome: 'Por favor, insira seu nome',
+            email: 'Digite um e-mail válido',
+            telefone: 'Informe seu telefone',
+            cpf: 'Informe seu CPF',
+            endereco: 'Informe seu endereço',
+            cep: 'Informe seu CEP'
+        },
+        submitHandler: function(form) {
+            alert('Formulário enviado com sucesso!');
+            form.submit();
+        }
+    });
